@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   
+    <div class="profile-card">
+        <img src="https://i.pinimg.com/736x/93/5d/e5/935de58f873059f62f184235dcd4f136.jpg" alt="Profile Picture" class="profile-img">
+        <h1 class="name">John Doe</h1>
+        <p class="title">Web Developer</p>
+        <p class="bio">I’m a passionate web developer with a love for clean design and functional code. I create responsive websites and web applications.</p>
+        
+        <div class="contact">
+            <a href="mailto:johndoe@example.com">📧 Email</a>
+            <a href="https://linkedin.com" target="_blank">💼 LinkedIn</a>
+            <a href="https://github.com" target="_blank">💻 GitHub</a>
+        </div>
+    </div>
+    <style>
+        .profile-img{
+            
+            border-radius: 50%;
+            height: 100px;
+            width: 100px;
+        }
+         body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center; /* Horizontal center */
+            align-items: center;     /* Vertical center */
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Profile card style */
+        .profile-card {
+            background: white;
+            text-align: center;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+            max-width: 300px;
+        }
+
+        /* Profile image style */
+        .profile-img {
+            border-radius: 50%;
+            height: 120px;
+            width: 120px;
+            object-fit: cover;
+            border: 3px solid #3498db;
+        }
+
+        .name {
+            margin: 10px 0 5px;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .title {
+            color: #777;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .bio {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 20px;
+            padding: 0 10px;
+        }
+
+        .contact a {
+            display: inline-block;
+            margin: 5px;
+            text-decoration: none;
+            color: white;
+            background: #3498db;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .contact a:hover {
+            background: #217dbb;
+        }
+    </style>
+</body>
+</html>

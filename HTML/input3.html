@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voter Eligibility Checker</title>
+</head>
+<body>
+
+  <h1>Voter Eligibility Checker</h1>
+  <button onclick="checkVoter()">Check Eligibility</button>
+
+  <div id="result"></div>
+
+  <script>
+    function checkVoter() {
+      const name = prompt("Enter your name:");
+      const age = prompt("Enter your age:");
+
+      // Validate input
+      if (name === null || age === null || name.trim() === "" || isNaN(age)) {
+        alert("Invalid input. Please try again.");
+        return;
+      }
+
+      const ageNum = parseInt(age);
+      const eligibility = ageNum >= 18 ? "Eligible to Vote" : "Not Eligible to Vote";
+
+      // Create table output
+      const tableHTML = `
+        <table border="1" cellpadding="8" cellspacing="0">
+          <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Eligibility</th>
+          </tr>
+          <tr>
+            <td>${name}</td>
+            <td>${ageNum}</td>
+            <td>${eligibility}</td>
+          </tr>
+        </table>
+      `;
+
+      document.getElementById("result").innerHTML = tableHTML;
+    }
+  </script>
+
+</body>
+</html>

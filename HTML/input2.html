@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+</head>
+<body>
+    <h1>Getting Input from HTML Elements</h1>
+    <table>
+        <tr>
+            <td>Name</td>
+            <td><input type="text" id="name"></td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td><input type="text" id="email"></td>
+        </tr>
+        <tr>
+            <td>Address</td>
+            <td><input type="text" id="address"></td>
+        </tr>
+        <tr>
+            <td>Country</td>
+            <td><input type="text" id="country"></td>
+        </tr>
+        <tr>
+            <td>Gender</td>
+            <td>
+                <input type="radio" name="gender" value="Male"> Male
+                <input type="radio" name="gender" value="Female"> Female
+            </td>
+        </tr>
+    </table>
+
+    <br>
+    <button onclick="regfun()">Register</button>
+    <button onclick="LOGINFUN()">Login</button>
+
+    <div id="output" style="margin-top:20px;"></div>
+
+    <script>
+        function LOGINFUN() {
+            let username = prompt("Enter username");
+            let password = prompt("Enter password");
+            document.getElementById("output").innerHTML =
+                "<h3>Login Attempt</h3>" +
+                "Username: " + username + "<br>" +
+                "Password: " + password;
+        }
+
+        function regfun() {
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let address = document.getElementById("address").value;
+            let country = document.getElementById("country").value;
+
+            // Get gender value
+            let genders = document.getElementsByName("gender");
+            let gender = "";
+            for (let i = 0; i < genders.length; i++) {
+                if (genders[i].checked) {
+                    gender = genders[i].value;
+                    break;
+                }
+            }
+
+            // Show data in table
+            document.getElementById("output").innerHTML = `
+                <h3>Registration Details</h3>
+                <table border="1" cellpadding="5">
+                    <tr><td>Name</td><td>${name}</td></tr>
+                    <tr><td>Email</td><td>${email}</td></tr>
+                    <tr><td>Address</td><td>${address}</td></tr>
+                    <tr><td>Country</td><td>${country}</td></tr>
+                    <tr><td>Gender</td><td>${gender}</td></tr>
+                </table>
+            `;
+        }
+    </script>
+</body>
+</html>
